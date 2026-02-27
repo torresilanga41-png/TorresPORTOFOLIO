@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Portofolio</title>
+</head>
+<body>
+    <header class="tete">
+    <nav class="navbar">
+        <div class="logo">Torres ILANGA</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="Apropos.html">À Propos</a></li>
+            <li><a href="service.html">Mes Services</a></li>
+            <li><a href="projet.html">Mes Projets</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+    <div class="contact-container">
+        <h1>Contactez-moi</h1>
+
+        <form id="whatsappForm">
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="email" id="email" placeholder="Votre email" required>
+            <textarea id="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer via WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+   
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>Email : torresilanga41@email.com</p>
+            <p>WhatsApp : +243 818 553 990</p>
+            <p>Kisangani, RDC</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Torres Ilanga | Tous droits réservés</p>
+    </div>
+</footer>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var whatsappMessage = "Bonjour, je m'appelle " + name + 
+    "%0AEmail: " + email + 
+    "%0A%0AMessage: " + message;
+
+    var phoneNumber = "243818553990"; // ← Remplace ici
+
+    var url = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+    window.open(url, "_blank");
+});
+</script>
+
+
+</body>
+</html>
